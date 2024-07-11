@@ -23,8 +23,15 @@ const seven = document.querySelector("#seven");
 const eight = document.querySelector("#eight");
 const nine = document.querySelector("#nine");
 
-let num1 = "0";
-let num2 = "0";
+let num1 = null;
+let num2 = null;
+let result = null;
+
+let sign = '';
+let signUsed = false;
+
+display.textContent = '0';
+
 
 AC.addEventListener("click", ()=>{
     num1= "0";
@@ -34,32 +41,106 @@ AC.addEventListener("click", ()=>{
 })
 
 zero.addEventListener("click", ()=>{
-    display.textContent += "0";
+    if ( display.textContent === '0' ){
+        display.textContent = "0";
+    }
+    else{
+        display.textContent += "0";
+    }
 })
 one.addEventListener("click", ()=>{
-    display.textContent += "1";
+    if ( display.textContent === '0' ){
+        display.textContent = "1";
+    }
+    else{
+        display.textContent += "1";
+    }
+    
 })
 two.addEventListener("click", ()=>{
-    display.textContent += "2";
+    if ( display.textContent === '0' ){
+        display.textContent = "2";
+    }
+    else{
+        display.textContent += "2";
+    }
 })
 three.addEventListener("click", ()=>{
-    display.textContent += "3";
+    if ( display.textContent === '0' ){
+        display.textContent = "3";
+    }
+    else{
+        display.textContent += "3";
+    }
 })
 four.addEventListener("click", ()=>{
-    display.textContent += "4";
+    if ( display.textContent === '0' ){
+        display.textContent = "4";
+    }
+    else{
+        display.textContent += "4";
+    }
 })
 five.addEventListener("click", ()=>{
-    display.textContent += "5";
+    if ( display.textContent === '0' ){
+        display.textContent = "5";
+    }
+    else{
+        display.textContent += "5";
+    }
 })
 six.addEventListener("click", ()=>{
-    display.textContent += "6";
+    if ( display.textContent === '0' ){
+        display.textContent = "6";
+    }
+    else{
+        display.textContent += "6";
+    }
 })
 seven.addEventListener("click", ()=>{
-    display.textContent += "7";
+    if ( display.textContent === '0' ){
+        display.textContent = "7";
+    }
+    else{
+        display.textContent += "7";
+    }
 })
 eight.addEventListener("click", ()=>{
-    display.textContent += "8";
+    if ( display.textContent === '0' ){
+        display.textContent = "8";
+    }
+    else{
+        display.textContent += "8";
+    }
 })
 nine.addEventListener("click", ()=>{
-    display.textContent += "9";
+    if ( display.textContent === '0' ){
+        display.textContent = "9";
+    }
+    else{
+        display.textContent += "9";
+    }
 })
+
+function Calculate(var1, var2, sign){
+    switch(sign) {
+        case "-":
+          // code block
+          break;
+        case "+":
+          // code block
+          break;
+        case "*":
+          // code block
+          break;
+        case "/":
+            // code block
+            break;
+        case "+":
+          // code block
+          break;
+        default:
+          // code block
+      }
+      
+}

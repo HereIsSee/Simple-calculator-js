@@ -23,7 +23,14 @@
     border-style: solid;
     border-width: 4px;
 }
+#CalculationDisplay{
+    font-size: 40px;
 
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 0;
+}
 .calcButton {
     width: 100%;
     flex-grow: 1;
