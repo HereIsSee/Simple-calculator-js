@@ -395,7 +395,7 @@ function resetButtonColor(button) {
             button.style.backgroundColor = "aliceblue";
             break;
         default:
-            button.style.backgroundColor = ""; // Default case
+            button.style.backgroundColor = "";
             break;
     }
 }
