@@ -216,6 +216,9 @@ minus.addEventListener("click", ()=>{
         return;
     }
     sign = '-';
+    if(signUsed){
+        return;
+    }
     signUsed = true;
     if(num1 !== null){
         num1 = Calculate(Number(num1),Number(display.textContent), sign);
@@ -234,6 +237,9 @@ plus.addEventListener("click", ()=>{
         return;
     }
     sign = '+';
+    if(signUsed){
+        return;
+    }
     signUsed = true;
     if(num1 !== null){
         num1 = Calculate(Number(num1),Number(display.textContent), sign);
@@ -249,6 +255,9 @@ multiply.addEventListener("click", ()=>{
     if (usedEqual){
         display.textContent = "0";
         usedEqual = false;
+        return;
+    }
+    if(signUsed){
         return;
     }
     sign = '*';
@@ -270,6 +279,9 @@ divide.addEventListener("click", ()=>{
         return;
     }
     sign = '/';
+    if(signUsed){
+        return;
+    }
     signUsed = true;
     if(num1 !== null){
         num1 = Calculate(Number(num1),Number(display.textContent), sign);
