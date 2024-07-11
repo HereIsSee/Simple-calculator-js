@@ -24,123 +24,264 @@ const eight = document.querySelector("#eight");
 const nine = document.querySelector("#nine");
 
 let num1 = null;
-let num2 = null;
 let result = null;
 
 let sign = '';
 let signUsed = false;
 
+let usedEqual = false;
+
 display.textContent = '0';
 
 
 AC.addEventListener("click", ()=>{
-    num1= "0";
-    num2= "0";
+    num1= null;
+    // num2= null;
 
     display.textContent= "0";
 })
 
 zero.addEventListener("click", ()=>{
-    if ( display.textContent === '0' ){
+    if ( display.textContent === '0' || usedEqual){
         display.textContent = "0";
+        usedEqual = false;
     }
     else{
-        display.textContent += "0";
+        if(signUsed){
+            num1 = Number(display.textContent);
+            display.textContent = "0";
+            signUsed = false;
+        }
+        else{
+            display.textContent += "0";
+        }
+        
     }
 })
 one.addEventListener("click", ()=>{
-    if ( display.textContent === '0' ){
+    if ( display.textContent === '0' || usedEqual){
         display.textContent = "1";
+        usedEqual = false;
     }
     else{
-        display.textContent += "1";
+        if(signUsed){
+            num1 = Number(display.textContent);
+            display.textContent = "1";
+            signUsed = false;
+        }
+        else{
+            display.textContent += "1";
+        }   
     }
     
 })
 two.addEventListener("click", ()=>{
-    if ( display.textContent === '0' ){
+    if ( display.textContent === '0' || usedEqual ){
         display.textContent = "2";
+        usedEqual = false;
     }
     else{
-        display.textContent += "2";
+        if(signUsed){
+            num1 = Number(display.textContent);
+            display.textContent = "2";
+            signUsed = false;
+        }
+        else{
+            display.textContent += "2";
+        }
+        
     }
 })
 three.addEventListener("click", ()=>{
-    if ( display.textContent === '0' ){
+    if ( display.textContent === '0' || usedEqual){
         display.textContent = "3";
+        usedEqual = false;
     }
     else{
-        display.textContent += "3";
+        if(signUsed){
+            num1 = Number(display.textContent);
+            display.textContent = "3";
+            signUsed = false;
+        }
+        else{
+            display.textContent += "3";
+        }
     }
 })
 four.addEventListener("click", ()=>{
-    if ( display.textContent === '0' ){
+    if ( display.textContent === '0' || usedEqual){
         display.textContent = "4";
+        usedEqual = false;
     }
     else{
-        display.textContent += "4";
+        if(signUsed){
+            num1 = Number(display.textContent);
+            display.textContent = "4";
+            signUsed = false;
+        }
+        else{
+            display.textContent += "4";
+        }
     }
 })
 five.addEventListener("click", ()=>{
-    if ( display.textContent === '0' ){
+    if ( display.textContent === '0' || usedEqual){
         display.textContent = "5";
+        usedEqual = false;
     }
     else{
-        display.textContent += "5";
+        if(signUsed){
+            num1 = Number(display.textContent);
+            display.textContent = "5";
+            signUsed = false;
+        }
+        else{
+            display.textContent += "5";
+        }
     }
 })
 six.addEventListener("click", ()=>{
-    if ( display.textContent === '0' ){
+    if ( display.textContent === '0' || usedEqual){
         display.textContent = "6";
+        usedEqual = false;
     }
     else{
-        display.textContent += "6";
+        if(signUsed){
+            num1 = Number(display.textContent);
+            display.textContent = "6";
+            signUsed = false;
+        }
+        else{
+            display.textContent += "6";
+        }
     }
 })
 seven.addEventListener("click", ()=>{
-    if ( display.textContent === '0' ){
+    if ( display.textContent === '0' || usedEqual){
         display.textContent = "7";
+        usedEqual = false;
     }
     else{
-        display.textContent += "7";
+        if(signUsed){
+            num1 = Number(display.textContent);
+            display.textContent = "7";
+            signUsed = false;
+        }
+        else{
+            display.textContent += "7";
+        }
     }
 })
 eight.addEventListener("click", ()=>{
-    if ( display.textContent === '0' ){
+    if ( display.textContent === '0' || usedEqual){
         display.textContent = "8";
+        usedEqual = false;
     }
     else{
-        display.textContent += "8";
+        if(signUsed){
+            num1 = Number(display.textContent);
+            display.textContent = "8";
+            signUsed = false;
+        }
+        else{
+            display.textContent += "8";
+        }
     }
 })
 nine.addEventListener("click", ()=>{
-    if ( display.textContent === '0' ){
+    if ( display.textContent === '0' || usedEqual){
         display.textContent = "9";
+        usedEqual = false;
     }
     else{
-        display.textContent += "9";
+        if(signUsed){
+            num1 = Number(display.textContent);
+            display.textContent = "9";
+            signUsed = false;
+        }
+        else{
+            display.textContent += "9";
+        }
     }
 })
 
+
+minus.addEventListener("click", ()=>{
+    sign = '-';
+    signUsed = true;
+    if(num1 !== null){
+        num1 = Calculate(Number(num1),Number(display.textContent), sign);
+        display.textContent = num1;
+    }
+    else{
+        num1 = Number(display.textContent);
+    }
+    
+    
+})
+plus.addEventListener("click", ()=>{
+    sign = '+';
+    signUsed = true;
+    if(num1 !== null){
+        num1 = Calculate(Number(num1),Number(display.textContent), sign);
+        display.textContent = num1;
+    }
+    else{
+        num1 = Number(display.textContent);
+    }
+    
+    
+})
+multiply.addEventListener("click", ()=>{
+    sign = '*';
+    signUsed = true;
+    if(num1 !== null){
+        num1 = Calculate(Number(num1),Number(display.textContent), sign);
+        display.textContent = num1;
+    }
+    else{
+        num1 = Number(display.textContent);
+    }
+    
+    
+})
+divide.addEventListener("click", ()=>{
+    sign = '/';
+    signUsed = true;
+    if(num1 !== null){
+        num1 = Calculate(Number(num1),Number(display.textContent), sign);
+        display.textContent = num1;
+    }
+    else{
+        num1 = Number(display.textContent);
+    } 
+})
+equals.addEventListener("click", ()=>{
+    usedEqual = true;
+    num1 = Calculate(Number(num1),Number(display.textContent), sign);
+    display.textContent = num1;
+    num1 = null;
+})
 function Calculate(var1, var2, sign){
     switch(sign) {
         case "-":
-          // code block
+          return var1 - var2;
           break;
         case "+":
-          // code block
+          return var1 + var2;
           break;
         case "*":
-          // code block
+          return var1 * var2;
           break;
         case "/":
-            // code block
+            return var1 / var2;
             break;
-        case "+":
+        case "%":
           // code block
           break;
+          break; 
         default:
-          // code block
+          return "ERROR";
       }
       
 }

@@ -38,9 +38,10 @@
 }
 .calcButton {
     border-radius: 8px;
+    border-width: 1px;
     font-size: 40px;
 }
 #zero {
-    flex-grow: 2;
+    flex-grow: 2.1;
     flex-basis: 0;
 }
