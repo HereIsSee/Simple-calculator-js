@@ -29,10 +29,10 @@
     flex-grow: 1;
     flex-basis: 0;
 }
-/* .calcButton {
+.calcButton {
     border-radius: 8px;
     font-size: 40px;
-} */
+}
 #zero {
     flex-grow: 2;
     flex-basis: 0;
