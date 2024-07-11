@@ -206,7 +206,15 @@ nine.addEventListener("click", ()=>{
 })
 
 
+//Need to make it so that you can't press 
+//an operation button more than once if no new numbers are given
+
 minus.addEventListener("click", ()=>{
+    if (usedEqual){
+        display.textContent = "0";
+        usedEqual = false;
+        return;
+    }
     sign = '-';
     signUsed = true;
     if(num1 !== null){
@@ -220,6 +228,11 @@ minus.addEventListener("click", ()=>{
     
 })
 plus.addEventListener("click", ()=>{
+    if (usedEqual){
+        display.textContent = "0";
+        usedEqual = false;
+        return;
+    }
     sign = '+';
     signUsed = true;
     if(num1 !== null){
@@ -233,6 +246,11 @@ plus.addEventListener("click", ()=>{
     
 })
 multiply.addEventListener("click", ()=>{
+    if (usedEqual){
+        display.textContent = "0";
+        usedEqual = false;
+        return;
+    }
     sign = '*';
     signUsed = true;
     if(num1 !== null){
@@ -246,6 +264,11 @@ multiply.addEventListener("click", ()=>{
     
 })
 divide.addEventListener("click", ()=>{
+    if (usedEqual){
+        display.textContent = "0";
+        usedEqual = false;
+        return;
+    }
     sign = '/';
     signUsed = true;
     if(num1 !== null){
@@ -262,6 +285,24 @@ equals.addEventListener("click", ()=>{
     display.textContent = num1;
     num1 = null;
 })
+
+changeSign.addEventListener("click", () => {
+    if ( display.textContent === '0' || usedEqual){
+        display.textContent = "0";
+        usedEqual = false;
+    }
+    display.textContent = Number(display.textContent) > 0 ? '-' + display.textContent : Number(display.textContent)*(-1);
+})
+
+percent.addEventListener("click", ()=>{
+    if ( usedEqual){
+        display.textContent = "0";
+        usedEqual = false;
+        return;
+    }
+    display.textContent = Number(display.textContent) / 100;
+})
+
 function Calculate(var1, var2, sign){
     switch(sign) {
         case "-":
@@ -276,12 +317,13 @@ function Calculate(var1, var2, sign){
         case "/":
             return var1 / var2;
             break;
-        case "%":
-          // code block
+        case "":
+          return var2;
           break;
-          break; 
         default:
-          return "ERROR";
+            return "ERROR";
+            break;
+          
       }
       
 }
