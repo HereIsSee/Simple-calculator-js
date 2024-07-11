@@ -1,8 +1,16 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(Calculator.ttf);
+  }
+
 #Container{
     display: flex; 
     justify-content: center; 
     align-items: center;
     height: 100vh;
+    background-color: #4169e1;
+
+    font-family: myFirstFont, Times, serif;
 }
 
 #Calculator {
@@ -14,7 +22,7 @@
     border-width: 4px;
     
     width: 600px;
-    /* height: 200px; */
+    background-color: red;
 }
 
 .line, #CalculationDisplay {
@@ -22,14 +30,17 @@
     height: 100px;
     border-style: solid;
     border-width: 4px;
+
+    
 }
 #CalculationDisplay{
-    font-size: 40px;
+    font-size: 80px;
 
     justify-content: flex-end;
     align-items: center;
     flex-grow: 1;
     flex-basis: 0;
+    background-color: #D3D3D3;
 }
 .calcButton {
     width: 100%;
@@ -39,9 +50,28 @@
 .calcButton {
     border-radius: 8px;
     border-width: 1px;
-    font-size: 40px;
+    font-size: 80px;
+    font-family: myFirstFont, Times, serif;
 }
 #zero {
     flex-grow: 2.1;
     flex-basis: 0;
+}
+#zero, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine {
+    background-color: greenyellow;
+}
+#plus, #minus, #multiply, #divide{
+    background-color: rgb(162, 140, 228);
+}
+#equals{
+    background-color: rgb(187, 3, 156);
+}
+#dot{
+    background-color: rgb(245, 245, 38);
+}
+#AC {
+    background-color: rgb(224, 122, 122);
+}
+#changeSign, #percent{
+    background-color: aliceblue;
 }
