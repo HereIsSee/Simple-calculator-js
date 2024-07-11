@@ -302,6 +302,12 @@ percent.addEventListener("click", ()=>{
     }
     display.textContent = Number(display.textContent) / 100;
 })
+dot.addEventListener("click", ()=>{
+    let containsDot = display.textContent.includes('.');
+    if (!containsDot){
+        display.textContent = display.textContent + '.';
+    }
+})
 
 function Calculate(var1, var2, sign){
     switch(sign) {
