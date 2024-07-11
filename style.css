@@ -75,3 +75,8 @@
 #changeSign, #percent{
     background-color: aliceblue;
 }
+
+
+.darker{
+    background-color:rgb(91, 94, 91);
+  }

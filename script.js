@@ -2,6 +2,21 @@ const container = document.querySelector("#Container");
 
 const display = document.querySelector("#CalculationDisplay");
 
+const buttons = document.querySelectorAll(".calcButton");
+
+buttons.forEach(button => {
+    button.addEventListener("mousedown", () => {
+        button.style.backgroundColor = "#555"; // Darker color
+    });
+
+    button.addEventListener("mouseup", () => {
+        resetButtonColor(button);
+    });
+
+    button.addEventListener("mouseleave", () => {
+        resetButtonColor(button);
+    });
+});
 const AC = document.querySelector("#AC");
 const changeSign = document.querySelector("#changeSign");
 const percent = document.querySelector("#percent");
@@ -344,4 +359,43 @@ function Calculate(var1, var2, sign){
           
       }
       
+}
+
+function resetButtonColor(button) {
+    switch (button.id) {
+        case "zero":
+        case "one":
+        case "two":
+        case "three":
+        case "four":
+        case "five":
+        case "six":
+        case "seven":
+        case "eight":
+        case "nine":
+            button.style.backgroundColor = "greenyellow";
+            break;
+        case "plus":
+        case "minus":
+        case "multiply":
+        case "divide":
+            button.style.backgroundColor = "rgb(162, 140, 228)";
+            break;
+        case "equals":
+            button.style.backgroundColor = "rgb(187, 3, 156)";
+            break;
+        case "dot":
+            button.style.backgroundColor = "rgb(245, 245, 38)";
+            break;
+        case "AC":
+            button.style.backgroundColor = "rgb(224, 122, 122)";
+            break;
+        case "changeSign":
+        case "percent":
+            button.style.backgroundColor = "aliceblue";
+            break;
+        default:
+            button.style.backgroundColor = ""; // Default case
+            break;
+    }
 }
